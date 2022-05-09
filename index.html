@@ -12,15 +12,21 @@
 
     <script>
         function update() {
+            //Вычисляется текущее время
             let date=new Date();
             let hours=date.getHours();
             let minutes=date.getMinutes();
             let seconds=date.getSeconds();
+
+            //Приводим время к нужному формату
             if (hours<10) hours='0'+hours;
             if (minutes<10) minutes='0'+minutes;
             if (seconds<10) seconds='0'+seconds;
+
+            //Добавление результата в html элемент
             clock.textContent=`${hours}:${minutes}:${seconds}`;
         }
+        //Обновление часов каждую секунду
         setInterval(update, 1000)
     </script>
 </body>
